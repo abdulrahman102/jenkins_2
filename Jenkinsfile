@@ -10,22 +10,9 @@ pipeline {
     }
 
     stages {
-        stage('check') {
-            steps {
-                check "${params.namespace}"
-               
-            }
-        }
 
-        stage('test') {
-            test params.project
-        }
-        
-        stage('deployment') {  
-            steps {
-                deployment 
-            }
-        }    
+        check "${params.namespace}"
+
     }
 
 }

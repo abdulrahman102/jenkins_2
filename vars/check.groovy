@@ -1,4 +1,9 @@
 def call(String name = 'null') {
-    echo "checking your code"
-    echo "${params.namespace}"
+
+    stage('check') {
+        steps {
+            echo "checking your code"
+            echo name      
+        }
+    }
 }
