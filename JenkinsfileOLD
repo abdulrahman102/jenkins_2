@@ -1,7 +1,3 @@
- libraries {
-     lib('pipeline-library-demo')
- }
-
 pipeline {
      agent any
     parameters {
@@ -12,22 +8,29 @@ pipeline {
     stages {
         stage('check') {
             steps {
-                check "${params.namespace}"
+                echo "checking your code"
+                echo "${params.namespace}"
                
             }
         }
 
         stage('test') {
-            test params.project
+            when {
+                expression{
+                    params.project == true 
+                }
+            }
+            steps {
+                echo "testing your app" 
+            }
         }
         
         stage('deployment') {  
             steps {
-                deployment 
+                echo "your code is deployed right now"
+                echo "this build number $BUILD_NUMBER"
             }
         }    
     }
 
 }
-
-
