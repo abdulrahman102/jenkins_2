@@ -1,1 +1,1 @@
-@Library('pipeline-library-demo')_
+@Library('sprints_pipeline')_
