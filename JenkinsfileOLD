@@ -31,6 +31,6 @@ pipeline {
                 echo "this build number $BUILD_NUMBER"
             }
         }    
-    }
+    } 
 
 }
